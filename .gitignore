@@ -1,6 +1,7 @@
-# macOS
+/node_modules
+/.next
+/out
 .DS_Store
-**/.DS_Store
-
-# editor/preview engine runtime (not for production)
-**/.thumbnail
+*.log
+.env*
+!.env.example
