@@ -34,7 +34,7 @@ export default function Footer() {
             <p style={cx('margin:0 0 26px;font-size:15.5px;line-height:1.6;color:#5F5F5F;max-width:300px;')}>Цифровые продукты и внедрение ИИ в бизнес-процессы под ключ</p>
             <div style={cx('font-size:13.5px;line-height:1.75;color:#5F5F5F;')}>
               <div style={cx('color:#2F2F2F;font-weight:700;margin-bottom:6px;')}>ООО «НЕЙРОПРОПЛЮС»</div>
-              <div>ИНН: 9709134402&nbsp;&nbsp;·&nbsp;&nbsp;КПП: 770901001</div>
+              <div>ИНН: 9709134402&nbsp;&nbsp;·&nbsp;&nbsp;КПП: 771401001</div>
               <div>ОГРН: 1267700137539</div>
               <div style={cx('margin-top:10px;')}>ОКВЭД 62.01 — Разработка компьютерного программного обеспечения</div>
             </div>
