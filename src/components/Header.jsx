@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { cx } from '@/lib/style';
 
 const LOGO = (
-  <svg viewBox="0 0 82 100" style={{ width: 'auto', flex: 'none', display: 'block' }} fill="#2F2F2F" aria-label="НейроПро+">
+  <svg viewBox="0 0 82 100" style={{ height: '100%', width: 'auto', flex: 'none', display: 'block' }} fill="#2F2F2F" aria-label="НейроПро+">
     <rect x="30" y="0" width="22" height="45" /><rect x="30" y="59" width="22" height="41" />
     <rect x="0" y="31" width="22" height="41" /><rect x="60" y="31" width="22" height="41" />
   </svg>
