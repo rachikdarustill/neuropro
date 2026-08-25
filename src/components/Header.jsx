@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { cx } from '@/lib/style';
 
 const LOGO = (
@@ -13,8 +14,17 @@ const LOGO = (
 const navBtn = 'font-family:inherit;cursor:pointer;background:none;color:#2F2F2F;border:none;border-bottom:2px solid transparent;padding:4px 1px;font-size:16px;font-weight:700;letter-spacing:-.015em;display:flex;align-items:center;gap:7px;white-space:nowrap;transition:border-color .25s ease;text-decoration:none;';
 const navArrow = 'font-size:14px;color:#5F5F5F;font-weight:700;transition:transform .25s ease,color .25s ease;';
 
+const NAV = [
+  { href: '/pricing', full: 'Стоимость услуг', short: 'Стоимость' },
+  { href: '/analysis', full: 'Оценить эффект от ИИ', short: 'Эффект ИИ' },
+  { href: '/cases', full: 'Реализованные кейсы', short: 'Кейсы' },
+];
+
 export default function Header() {
   const [sc, setSc] = useState(false);
+  const pathname = usePathname();
+  // Раздел кейсов подсвечен и на странице отдельного кейса.
+  const isActive = (href) => pathname === href || pathname.startsWith(href + '/');
   useEffect(() => {
     const onScroll = () => setSc(window.scrollY > 36);
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -45,14 +55,16 @@ export default function Header() {
           </span>
         </Link>
         <nav style={cx('display:flex;align-items:center;gap:clamp(16px,2vw,30px);flex:none;')}>
-          <Link data-r="navbtn" href="/pricing" style={cx(navBtn)}>
-            <span className="npp-nav-full">Стоимость услуг</span><span className="npp-nav-short">Стоимость</span>
-            <span className="nav-arrow" style={cx(navArrow)}>&rsaquo;</span>
-          </Link>
-          <Link data-r="navbtn" href="/cases" style={cx(navBtn)}>
-            <span className="npp-nav-full">Реализованные кейсы</span><span className="npp-nav-short">Кейсы</span>
-            <span className="nav-arrow" style={cx(navArrow)}>&rsaquo;</span>
-          </Link>
+          {NAV.map((n) => {
+            const active = isActive(n.href);
+            return (
+              <Link key={n.href} data-r="navbtn" href={n.href} aria-current={active ? 'page' : undefined}
+                style={cx(navBtn + (active ? 'border-bottom-color:#2F2F2F;' : ''))}>
+                <span className="npp-nav-full">{n.full}</span><span className="npp-nav-short">{n.short}</span>
+                <span className="nav-arrow" style={cx(navArrow)}>&rsaquo;</span>
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>
