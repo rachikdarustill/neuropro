@@ -6,7 +6,7 @@ export const dynamic = 'force-static';
 const BASE = 'https://neuro-pro.ai';
 
 export default function sitemap() {
-  const staticRoutes = ['', '/pricing', '/cases'].map((p) => ({
+  const staticRoutes = ['', '/pricing', '/analysis', '/cases'].map((p) => ({
     url: `${BASE}${p}/`.replace(/\/\/$/, '/'),
     changeFrequency: 'monthly',
     priority: p === '' ? 1.0 : 0.8,

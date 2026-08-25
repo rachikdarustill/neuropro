@@ -79,3 +79,26 @@ body{ margin:0; font-family:var(--font-manrope),'Manrope',-apple-system,sans-ser
   [data-r="navbtn"]{ font-size:14px !important; }
   header nav{ gap:12px !important; }
 }
+
+/* ===== Оценить эффект от ИИ ===== */
+@media (max-width:1040px){
+  [data-r="anGrid"]{ grid-template-columns:1fr !important; }
+  /* Боковая колонка дублировала бы шапку раздела: сжимаем её до строки
+     прогресса, а примечание уводим под вопрос. */
+  [data-r="anAside"]{ position:static !important; background:transparent !important; color:#2F2F2F !important; padding:0 !important; border-radius:0 !important; gap:10px !important; }
+  [data-r="anAsideFull"]{ display:none !important; }
+  [data-r="anProgress"]{ font-size:14px !important; }
+  [data-r="anBar"]{ background:#D0D0D0 !important; }
+  [data-r="anBarFill"]{ background:#2F2F2F !important; }
+  [data-r="anQNote"]{ display:block !important; }
+}
+@media (max-width:900px){
+  [data-r="anHero"]{ grid-template-columns:1fr !important; }
+}
+@media (max-width:780px){
+  [data-r="anDual"]{ grid-template-columns:1fr !important; }
+}
+@media (max-width:600px){
+  [data-r="anGrid"]{ padding:22px 12px 30px !important; gap:16px !important; }
+  [data-r="anAside"]{ padding:22px 18px !important; }
+}

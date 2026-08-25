@@ -3,8 +3,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { cx } from '@/lib/style';
 import { Hx } from '@/components/Hx';
+import { sendLead } from '@/lib/lead';
 
-const RELAY = 'https://neuropro-lead-relay.rachikdarustill.workers.dev';
 const inputBase = 'font-family:inherit;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.25);color:#fff;font-size:16px;padding:9px 0;outline:none;transition:border-color .3s ease;';
 const inputFocus = 'border-bottom-color:#fff;';
 const labelSpan = 'font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:700;';
@@ -29,9 +29,7 @@ export default function LeadForm() {
       if (inp.type === 'checkbox' || inp.type === 'hidden') return;
       if (inp.name && inp.value.trim()) data[inp.name] = inp.value.trim();
     });
-    try {
-      fetch(RELAY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data), keepalive: true }).catch(() => {});
-    } catch (_) {}
+    sendLead(data);
     setSent(true);
     if (form.reset) form.reset();
   }
