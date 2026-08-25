@@ -59,7 +59,7 @@ export default function Header() {
             const active = isActive(n.href);
             return (
               <Link key={n.href} data-r="navbtn" href={n.href} aria-current={active ? 'page' : undefined}
-                style={cx(navBtn + (active ? 'border-bottom-color:#2F2F2F;' : ''))}>
+                style={cx(navBtn + `border-bottom:2px solid ${active ? '#2F2F2F' : 'transparent'};`)}>
                 <span className="npp-nav-full">{n.full}</span><span className="npp-nav-short">{n.short}</span>
                 <span className="nav-arrow" style={cx(navArrow)}>&rsaquo;</span>
               </Link>

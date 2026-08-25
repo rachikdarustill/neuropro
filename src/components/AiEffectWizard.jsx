@@ -20,7 +20,7 @@ const DARK = 'background:#2F2F2F;color:#fff;border-radius:18px;';
 
 const BTN = 'font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:18px;padding:16px 32px;font-size:16px;font-weight:700;border:1px solid transparent;cursor:pointer;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s,background .25s,color .25s;';
 const BTN_PRIMARY = BTN + 'background:#2F2F2F;color:#fff;';
-const BTN_GHOST = BTN + 'background:#fff;color:#2F2F2F;border-color:#5F5F5F;';
+const BTN_GHOST = BTN + 'background:#fff;color:#2F2F2F;border:1px solid #5F5F5F;';
 const HOVER_PRIMARY = 'transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.25);';
 const HOVER_GHOST = 'transform:translateY(-3px);box-shadow:0 14px 30px -16px rgba(0,0,0,.3);';
 const OFF = 'opacity:.45;cursor:not-allowed;transform:none;box-shadow:none;';
@@ -42,7 +42,7 @@ function Opt({ on, children, onClick }) {
     <Hx as="button" type="button" onClick={onClick}
       s={'font-family:inherit;border-radius:14px;padding:13px 18px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s ease;'
         + (on ? 'background:#2F2F2F;color:#fff;border:1px solid #2F2F2F;' : 'background:#fff;color:#2F2F2F;border:1px solid #D0D0D0;')}
-      sh={on ? undefined : 'border-color:#2F2F2F;'}>
+      sh={on ? undefined : 'border:1px solid #2F2F2F;'}>
       {children}
     </Hx>
   );
@@ -157,7 +157,7 @@ export default function AiEffectWizard() {
               placeholder="Опишите процесс одним предложением" value={ans.processOther || ''}
               onChange={(e) => setAns({ ...ans, processOther: e.target.value })}
               s="font-family:inherit;font-size:16px;width:100%;padding:13px 15px;border:1px solid #D0D0D0;border-radius:14px;margin-bottom:24px;outline:none;"
-              sf="border-color:#2F2F2F;" />
+              sf="border:1px solid #2F2F2F;" />
           )}
         </>
       )}
@@ -270,7 +270,7 @@ export default function AiEffectWizard() {
         {[['Имя', 'name', 'text', true], ['Компания', 'company', 'text', true], ['Должность', 'role', 'text', false], ['Рабочая почта', 'email', 'email', true]].map(([label, name, type, req]) => (
           <label key={name} style={cx('display:flex;flex-direction:column;gap:7px;')}>
             <span style={cx('font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);')}>{label}</span>
-            <Hx as="input" name={name} type={type} required={req} s={FIELD_INPUT} sf="border-bottom-color:#fff;" />
+            <Hx as="input" name={name} type={type} required={req} s={FIELD_INPUT} sf="border-bottom:1px solid #fff;" />
           </label>
         ))}
         <label style={cx('grid-column:1/-1;display:flex;align-items:flex-start;gap:12px;cursor:pointer;margin-top:2px;')}>
