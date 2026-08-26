@@ -45,8 +45,8 @@ export default function LeadForm() {
           <div style={cx('margin-top:auto;padding-top:clamp(36px,4vw,52px);')}>
             <div style={cx('font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:700;margin-bottom:18px;')}>Связаться напрямую</div>
             <div style={cx('display:flex;flex-direction:column;gap:13px;font-size:16px;')}>
-              <Hx as="a" href="mailto:info@neuro-pro.ai" s="color:#D0D0D0;text-decoration:none;transition:color .3s ease;display:flex;gap:14px;" sh="color:#fff;"><span style={cx('color:rgba(255,255,255,.7);width:64px;flex:none;')}>E-mail</span>info@neuro-pro.ai</Hx>
-              <Hx as="a" href="tel:+79670609494" s="color:#D0D0D0;text-decoration:none;transition:color .3s ease;display:flex;gap:14px;" sh="color:#fff;"><span style={cx('color:rgba(255,255,255,.7);width:64px;flex:none;')}>Телефон</span>+7 967 060-94-94</Hx>
+              <Hx as="a" href="mailto:info@neuro-pro.ai" className="npp-contact" s="color:#D0D0D0;text-decoration:none;transition:color .3s ease;display:flex;gap:14px;" sh="color:#fff;"><span style={cx('color:rgba(255,255,255,.7);width:64px;flex:none;')}>E-mail</span>info@neuro-pro.ai</Hx>
+              <Hx as="a" href="tel:+79670609494" className="npp-contact" s="color:#D0D0D0;text-decoration:none;transition:color .3s ease;display:flex;gap:14px;" sh="color:#fff;"><span style={cx('color:rgba(255,255,255,.7);width:64px;flex:none;')}>Телефон</span>+7 967 060-94-94</Hx>
             </div>
           </div>
         </div>
