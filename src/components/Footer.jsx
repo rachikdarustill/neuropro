@@ -24,7 +24,7 @@ export default function Footer() {
     <footer style={cx('padding:0 clamp(14px,2vw,28px) clamp(18px,2.5vw,32px);')}>
       <div style={cx('max-width:1440px;margin:0 auto;background:#fff;border:1px solid #D0D0D0;border-radius:30px;box-shadow:0 30px 72px -30px rgba(0,0,0,.22);padding:clamp(48px,5vw,76px) clamp(32px,4vw,56px) clamp(32px,4vw,44px);')}>
         <div className="npp-footer-grid" style={cx('display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(36px,4vw,56px);')}>
-          <div style={cx('min-width:240px;')}>
+          <div style={cx('min-width:min(240px,100%);')}>
             <Link href="/" style={cx('display:flex;align-items:center;gap:13px;cursor:pointer;margin-bottom:24px;text-decoration:none;')}>
               <svg viewBox="0 0 82 100" style={cx('height:38px;width:auto;flex:none;display:block;')} fill="#2F2F2F" aria-label="НейроПро+">
                 <rect x="30" y="0" width="22" height="45" /><rect x="30" y="59" width="22" height="41" /><rect x="0" y="31" width="22" height="41" /><rect x="60" y="31" width="22" height="41" />

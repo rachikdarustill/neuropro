@@ -33,7 +33,7 @@ export default function CookieConsent() {
   return (
     <div style={cx('position:fixed;left:0;right:0;bottom:0;z-index:1500;display:flex;justify-content:center;padding:clamp(12px,2vw,24px);pointer-events:none;')}>
       <div style={cx('pointer-events:auto;background:#2F2F2F;color:#fff;border-radius:20px;max-width:880px;width:100%;padding:clamp(20px,2.2vw,26px) clamp(22px,2.5vw,30px);box-shadow:0 30px 70px -18px rgba(0,0,0,.55);display:flex;flex-wrap:wrap;align-items:center;gap:20px 28px;animation:npp_msg .4s cubic-bezier(.16,1,.3,1) both;')}>
-        <div style={cx('display:flex;align-items:flex-start;gap:15px;flex:1;min-width:260px;')}>
+        <div style={cx('display:flex;align-items:flex-start;gap:15px;flex:1;min-width:min(260px,100%);')}>
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={cx('flex:none;margin-top:1px;')}>
             <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5z" />
             <circle cx="9" cy="11" r="1" fill="rgba(255,255,255,.85)" stroke="none" />
