@@ -22,9 +22,14 @@ const NAV = [
 
 export default function Header() {
   const [sc, setSc] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   // Раздел кейсов подсвечен и на странице отдельного кейса.
   const isActive = (href) => pathname === href || pathname.startsWith(href + '/');
+
+  // Меню закрывается само при переходе — иначе оно осталось бы раскрытым
+  // поверх новой страницы, так как шапка не перемонтируется.
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
   useEffect(() => {
     const onScroll = () => setSc(window.scrollY > 36);
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -66,7 +71,23 @@ export default function Header() {
             );
           })}
         </nav>
+
+        {/* Три пункта не помещаются на телефон: до 600px меню сворачивается в бургер. */}
+        <button type="button" className="npp-burger" aria-label="Меню" aria-expanded={menuOpen}
+          aria-controls="npp-mnav" onClick={() => setMenuOpen((v) => !v)}>
+          <span /><span /><span />
+        </button>
       </div>
+
+      {menuOpen && (
+        <div className="npp-mnav" id="npp-mnav">
+          {NAV.map((n) => (
+            <Link key={n.href} href={n.href} className="npp-mnav-btn"
+              aria-current={isActive(n.href) ? 'page' : undefined}>{n.full}</Link>
+          ))}
+          <Link href="/#lead-form" className="npp-mnav-cta">Написать нам</Link>
+        </div>
+      )}
     </header>
   );
 }

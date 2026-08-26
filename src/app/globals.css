@@ -42,7 +42,7 @@ body{ margin:0; font-family:var(--font-manrope),'Manrope',-apple-system,sans-ser
   [data-r="caseHero"]{ grid-template-columns:1fr !important; gap:32px !important; }
   [data-r="priceCalc"]{ grid-template-columns:1fr !important; gap:36px !important; }
   [data-r="brandTag"]{ display:none !important; }
-  header > div{ padding-left:28px !important; padding-right:28px !important; }
+  header > div:first-child{ padding-left:28px !important; padding-right:28px !important; }
   [data-r="mockGrid"]{ grid-template-columns:1fr !important; }
   [data-r="formSplit"]{ grid-template-columns:1fr !important; }
   [data-r="mockGrid"] > div{ border-left:none !important; border-right:none !important; }
@@ -60,16 +60,15 @@ body{ margin:0; font-family:var(--font-manrope),'Manrope',-apple-system,sans-ser
 @media (max-width:860px){
   .npp-footer-grid{ grid-template-columns:1fr 1fr !important; gap:34px 36px !important; }
   .npp-footer-grid > div:first-child{ grid-column:1 / -1; }
+  .npp-nav-full{ display:none; }
+  .npp-nav-short{ display:inline; }
 }
 @media (max-width:600px){
   main{ padding-top:100px !important; }
-  header > div{ padding:14px 18px !important; gap:12px !important; }
+  header > div:first-child{ padding:14px 18px !important; gap:12px !important; }
   header svg[aria-label]{ height:38px !important; }
   [data-r="brandName"]{ font-size:16px !important; }
-  header nav{ gap:16px !important; }
-  .npp-nav-full{ display:none; }
-  .npp-nav-short{ display:inline; }
-  .nav-arrow{ display:none !important; }
+  header nav{ display:none !important; }
   .npp-darkform{ grid-template-columns:1fr !important; gap:22px !important; }
   .npp-footer-grid{ grid-template-columns:1fr !important; gap:32px !important; }
 }
@@ -102,3 +101,26 @@ body{ margin:0; font-family:var(--font-manrope),'Manrope',-apple-system,sans-ser
   [data-r="anGrid"]{ padding:22px 12px 30px !important; gap:16px !important; }
   [data-r="anAside"]{ padding:22px 18px !important; }
 }
+
+/* ===== Мобильное меню ===== */
+.npp-burger{
+  display:none; width:46px; height:46px; flex:none; padding:0; cursor:pointer;
+  background:none; border:1px solid #D0D0D0; border-radius:12px;
+  flex-direction:column; align-items:center; justify-content:center; gap:5px;
+}
+.npp-burger span{ display:block; width:20px; height:2px; background:#2F2F2F; border-radius:2px; }
+.npp-mnav{
+  border-top:1px solid #D0D0D0; background:#fff;
+  padding:10px 16px 18px; display:flex; flex-direction:column;
+}
+.npp-mnav a{ color:#2F2F2F; text-decoration:none; }
+.npp-mnav-btn{ border-bottom:1px solid #E6E6E6; padding:15px 2px; font-size:17px; font-weight:700; }
+.npp-mnav-btn[aria-current="page"]{ text-decoration:underline; text-underline-offset:5px; }
+.npp-mnav-cta{
+  background:#2F2F2F; color:#fff !important; border-radius:14px;
+  padding:15px 20px; font-size:16px; font-weight:700; margin-top:14px; text-align:center;
+}
+/* Показ бургера — после базового display:none выше, иначе оно перебьёт правило. */
+@media (max-width:600px){ .npp-burger{ display:flex; } }
+/* Меню открывается только бургером; если ширину вернули на десктопную — прячем. */
+@media (min-width:601px){ .npp-mnav{ display:none; } }
