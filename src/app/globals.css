@@ -150,3 +150,8 @@ a{ color:inherit; }
   [data-reveal]{ opacity:1 !important; transform:none !important; }
   html{ scroll-behavior:auto; }
 }
+
+/* Зона нажатия у прямых контактов — не меньше 44px на телефоне. */
+@media (max-width:600px){
+  .npp-contact{ min-height:44px; align-items:center; }
+}

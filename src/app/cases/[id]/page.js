@@ -35,7 +35,7 @@ export default function CasePage({ params }) {
     <PageCard>
     <article style={cx('max-width:1080px;margin:0 auto;padding:clamp(32px,5vw,64px) 32px clamp(64px,8vw,110px);')}>
       <Hx as={Link} href="/cases/" data-reveal
-        s="font-family:inherit;cursor:pointer;background:none;border:none;color:#5F5F5F;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;padding:0;margin-bottom:clamp(32px,4vw,52px);text-decoration:none;width:fit-content;transition:color .3s ease;" sh="color:#2F2F2F;">
+        s="font-family:inherit;cursor:pointer;background:none;border:none;color:#5F5F5F;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;padding:11px 0;min-height:44px;box-sizing:border-box;margin-bottom:clamp(21px,4vw,41px);text-decoration:none;width:fit-content;transition:color .3s ease;" sh="color:#2F2F2F;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>Все кейсы
       </Hx>
 
