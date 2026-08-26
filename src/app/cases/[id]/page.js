@@ -71,7 +71,7 @@ export default function CasePage({ params }) {
       {/* 7.3 ЧТО СДЕЛАЛИ */}
       <div data-reveal style={cx('margin-bottom:clamp(48px,6vw,76px);')}>
         <div style={cx(eyebrow + 'margin-bottom:28px;')}>Что сделали</div>
-        <div style={cx('display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:2px 40px;')}>
+        <div style={cx('display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:2px 40px;')}>
           {whatDidN.map((w, i) => (
             <div key={i} style={cx('display:flex;gap:18px;padding:16px 0;border-top:1px solid #D0D0D0;align-items:flex-start;')}>
               <span style={cx('font-size:14px;font-weight:800;color:#5F5F5F;font-variant-numeric:tabular-nums;flex:none;width:24px;padding-top:2px;')}>{w.n}</span>
@@ -105,7 +105,7 @@ export default function CasePage({ params }) {
       {/* 7.6 РЕЗУЛЬТАТ */}
       <div data-reveal style={cx('margin-bottom:clamp(48px,6vw,76px);')}>
         <div style={cx(eyebrow + 'margin-bottom:24px;')}>Результат</div>
-        <div style={cx('display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;')}>
+        <div style={cx('display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:16px;')}>
           {c.results.map((r, i) => (
             <div key={i} style={cx('display:flex;gap:13px;align-items:flex-start;background:#fff;border:1px solid #D0D0D0;border-radius:16px;padding:22px 22px;')}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F2F2F" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={cx('flex:none;margin-top:1px;')}><path d="M5 12.5l4.5 4.5L19 6.5" /></svg>

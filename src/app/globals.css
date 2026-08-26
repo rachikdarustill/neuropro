@@ -124,3 +124,20 @@ body{ margin:0; font-family:var(--font-manrope),'Manrope',-apple-system,sans-ser
 @media (max-width:600px){ .npp-burger{ display:flex; } }
 /* Меню открывается только бургером; если ширину вернули на десктопную — прячем. */
 @media (min-width:601px){ .npp-mnav{ display:none; } }
+
+/* ===== Чат-калькулятор на телефоне =====
+   Четыре вложенных контейнера подряд добавляли свои отступы, и на узком
+   экране под текст оставалась примерно треть ширины — сообщения ломались
+   по два слова. Снимаем дублирующие отступы и убираем аватар: имя агента
+   и так есть в шапке карточки. */
+@media (max-width:600px){
+  /* Секция — четвёртый контейнер в цепочке отступов; на телефоне 32px по
+     бокам избыточны и отнимают ширину у обеих колонок. */
+  [data-r="priceCalc"]{ padding-left:18px !important; padding-right:18px !important; }
+  .npp-chat-body{ padding:16px 12px !important; min-height:260px !important; }
+  .npp-chat-row{ max-width:100% !important; }
+  .npp-chat-ava{ display:none !important; }
+  .npp-chat-user{ max-width:88% !important; }
+  .npp-chat-bubble, .npp-chat-user{ padding:12px 15px !important; }
+  .npp-chat-opts{ padding:14px 12px !important; }
+}
