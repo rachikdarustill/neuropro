@@ -6,7 +6,7 @@ import { Hx } from '@/components/Hx';
 import { sendLead } from '@/lib/lead';
 
 const inputBase = 'font-family:inherit;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.25);color:#fff;font-size:16px;padding:9px 0;outline:none;transition:border-color .3s ease;';
-const inputFocus = 'border-bottom-color:#fff;';
+const inputFocus = 'border-bottom:1px solid #fff;';
 const labelSpan = 'font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:700;';
 
 function Field({ label, name, type = 'text', placeholder }) {
