@@ -95,7 +95,7 @@ export default function PriceCalculator() {
           </div>
         </div>
 
-        <div ref={chatBodyRef} style={cx('padding:28px 26px;flex:1;min-height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:16px;background:#fff;')}>
+        <div ref={chatBodyRef} className="npp-chat-body" style={cx('padding:28px 26px;flex:1;min-height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:16px;background:#fff;')}>
           {!chatStarted && (
             <div style={cx('margin:auto;text-align:center;padding:30px 10px;')}>
               <p style={cx('margin:0 0 24px;font-size:16px;line-height:1.6;color:#5F5F5F;max-width:420px;')}>Привет! Меня зовут {AGENT_NAME}. Я помогу посчитать ориентировочную стоимость вашего проекта и задам пару уточняющих вопросов</p>
@@ -104,17 +104,17 @@ export default function PriceCalculator() {
           )}
 
           {chatMsgs.map((m, i) => m.from === 'bot' ? (
-            <div key={i} style={cx('display:flex;gap:11px;align-items:flex-end;max-width:84%;animation:npp_msg .4s cubic-bezier(.16,1,.3,1) both;')}>
-              <div style={cx('width:30px;height:30px;border-radius:9px;background:#2F2F2F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none;')}>{AGENT_INITIAL}</div>
-              <div style={cx('background:#E6E6E6;color:#2F2F2F;border-radius:4px 16px 16px 16px;padding:14px 18px;font-size:15.5px;line-height:1.55;white-space:pre-line;')}>{m.text}</div>
+            <div key={i} className="npp-chat-row" style={cx('display:flex;gap:11px;align-items:flex-start;max-width:84%;animation:npp_msg .4s cubic-bezier(.16,1,.3,1) both;')}>
+              <div className="npp-chat-ava" style={cx('width:30px;height:30px;border-radius:9px;background:#2F2F2F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none;')}>{AGENT_INITIAL}</div>
+              <div className="npp-chat-bubble" style={cx('background:#E6E6E6;color:#2F2F2F;border-radius:4px 16px 16px 16px;padding:14px 18px;font-size:15.5px;line-height:1.55;white-space:pre-line;')}>{m.text}</div>
             </div>
           ) : (
-            <div key={i} style={cx('align-self:flex-end;background:#2F2F2F;color:#fff;border-radius:16px 16px 4px 16px;padding:13px 18px;font-size:15.5px;line-height:1.5;max-width:80%;animation:npp_msg .4s cubic-bezier(.16,1,.3,1) both;')}>{m.text}</div>
+            <div key={i} className="npp-chat-user" style={cx('align-self:flex-end;background:#2F2F2F;color:#fff;border-radius:16px 16px 4px 16px;padding:13px 18px;font-size:15.5px;line-height:1.5;max-width:80%;animation:npp_msg .4s cubic-bezier(.16,1,.3,1) both;')}>{m.text}</div>
           ))}
 
           {chatTyping && (
-            <div style={cx('display:flex;gap:11px;align-items:flex-end;')}>
-              <div style={cx('width:30px;height:30px;border-radius:9px;background:#2F2F2F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none;')}>{AGENT_INITIAL}</div>
+            <div className="npp-chat-row" style={cx('display:flex;gap:11px;align-items:flex-start;')}>
+              <div className="npp-chat-ava" style={cx('width:30px;height:30px;border-radius:9px;background:#2F2F2F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex:none;')}>{AGENT_INITIAL}</div>
               <div style={cx('background:#E6E6E6;border-radius:4px 16px 16px 16px;padding:16px 18px;display:flex;gap:5px;')}>
                 <span style={cx('width:7px;height:7px;border-radius:50%;background:#5F5F5F;display:inline-block;animation:npp_typing 1.2s infinite;')} />
                 <span style={cx('width:7px;height:7px;border-radius:50%;background:#5F5F5F;display:inline-block;animation:npp_typing 1.2s infinite .2s;')} />
@@ -125,7 +125,7 @@ export default function PriceCalculator() {
         </div>
 
         {chatOptions.length > 0 && (
-          <div style={cx('padding:18px 26px;border-top:1px solid #D0D0D0;display:flex;flex-wrap:wrap;gap:10px;background:#E6E6E6;')}>
+          <div className="npp-chat-opts" style={cx('padding:18px 26px;border-top:1px solid #D0D0D0;display:flex;flex-wrap:wrap;gap:10px;background:#E6E6E6;')}>
             {chatOptions.map((opt, i) => (
               <Hx key={i} as="button" onClick={() => pickOption(opt)} s="font-family:inherit;cursor:pointer;background:#fff;color:#2F2F2F;border:1px solid #D0D0D0;border-radius:18px;padding:11px 18px;font-size:14.5px;font-weight:700;transition:all .25s cubic-bezier(.16,1,.3,1);" sh="background:#2F2F2F;color:#fff;border:1px solid #2F2F2F;transform:translateY(-2px);">{opt.label}</Hx>
             ))}

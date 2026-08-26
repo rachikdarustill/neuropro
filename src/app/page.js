@@ -36,7 +36,7 @@ export default function Home() {
               <div style={cx('font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#5F5F5F;font-weight:700;margin-bottom:22px;')}>Направления</div>
               <h2 style={cx('margin:0;font-size:clamp(32px,4vw,54px);line-height:1.06;letter-spacing:-0.02em;color:#2F2F2F;font-weight:700;')}>Чем мы занимаемся</h2>
             </div>
-            <div style={cx('display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:22px;')}>
+            <div style={cx('display:grid;grid-template-columns:repeat(auto-fit,minmax(min(258px,100%),1fr));gap:22px;')}>
               {SERVICES.map(([title, desc]) => (
                 <div key={title} data-reveal style={cx('border:1px solid #D0D0D0;border-radius:14px;padding:34px 30px;background:#fff;box-shadow:0 16px 38px -20px rgba(0,0,0,.22);')}>
                   <h3 style={cx('margin:0 0 14px;font-size:21px;color:#2F2F2F;font-weight:700;letter-spacing:-0.01em;')}>{title}</h3>
