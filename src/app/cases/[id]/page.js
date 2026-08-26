@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { cx } from '@/lib/style';
 import { Hx } from '@/components/Hx';
 import PageCard from '@/components/PageCard';
-import CaseArt from '@/components/CaseArt';
+import CaseProfile from '@/components/CaseProfile';
 import { casesData } from '@/lib/data';
 
 export function generateStaticParams() {
@@ -55,7 +55,7 @@ export default function CasePage({ params }) {
           </div>
           <Hx as={Link} href="/#lead-form" s="font-family:inherit;cursor:pointer;display:inline-block;margin-top:34px;background:#2F2F2F;color:#fff;border:none;border-radius:18px;padding:16px 32px;font-size:16px;font-weight:700;text-decoration:none;transition:all .3s cubic-bezier(.16,1,.3,1);" sh="transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.25);">Обсудить похожую задачу</Hx>
         </div>
-        <CaseArt caseData={c} />
+        <CaseProfile caseData={c} />
       </div>
 
       {/* 7.2 ЗАДАЧА */}
