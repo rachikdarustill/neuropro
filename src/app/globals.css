@@ -28,7 +28,10 @@ a{ color:inherit; }
 @media (max-width:980px){
   .npp-cases-grid{ grid-template-columns:1fr 1fr !important; }
   .npp-case-flow{ flex-direction:column !important; align-items:stretch !important; }
-  .npp-case-flow .npp-flow-arrow{ transform:rotate(90deg); }
+  /* Поворачиваем саму стрелку, а не строку: строка растянута на всю ширину,
+     и её поворот на 90° уносил SVG из центра на соседний блок. */
+  .npp-case-flow .npp-flow-arrow{ transform:none; justify-content:center; }
+  .npp-case-flow .npp-flow-arrow svg{ transform:rotate(90deg); }
 }
 @media (max-width:780px){
   [data-r="hero"]{ grid-template-columns:1fr !important; gap:40px !important; }
